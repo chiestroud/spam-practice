@@ -243,6 +243,13 @@ let customers = [
 
 const spamEl = document.querySelector('#hidden');
 
-const emails = customers.map(customer => {
-  spamEl.innerHTML += `<h2>${customer.contacts.email}</h2>`
+// const emails = customers.map(customer => {
+//   spamEl.innerHTML += `<h2>${customer.contacts.email}</h2>`
+// })
+
+customers.forEach(customer => {
+  const emailArray = customer.contacts.email;
+  emailArray.forEach(email => {
+    spamEl.innerHTML += `<h2>${email}</h2>`
+  })
 })
